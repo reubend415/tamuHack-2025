@@ -1,4 +1,5 @@
-import { Text, View, StyleSheet } from "react-native";
+import React from 'react';
+import { Button, Text, View, Image, Animated, ScrollView, Dimensions, StyleSheet } from "react-native";
 import { Link } from 'expo-router';
 
 
@@ -12,9 +13,17 @@ const styles = StyleSheet.create({
   text: {
     color: '#FFFFFF',
   },
+  title: {
+    color: '#FFFFFF',
+    fontSize: 40,
+    paddingBottom: 60,
+  },
   button: {
+    borderWidth: 3,
+    borderRadius: 20,
+    borderColor: '#FFD500', 
     fontSize: 20,
-    textDecorationLine: 'underline',
+    padding: 8,
     color: '#FFFFFF',
   }
 });
@@ -22,8 +31,14 @@ const styles = StyleSheet.create({
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Napful</Text>
-      <Link href="/inputs" style={styles.button}>Input New Nap</Link>
+      <View>
+        <Text style={styles.title}>Napful</Text>
+      </View>
+      <View>
+        <Link href="/inputs">
+          <Button title="Lights out?" />
+        </Link>
+      </View>
     </View>
   );
 
